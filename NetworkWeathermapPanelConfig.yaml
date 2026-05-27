@@ -1,37 +1,40 @@
-version: 1
 
-datasources:
-  - name: Prometheus
-    uid: prometheus
+# ------------------------------------------------------------------------------
+# Panel Config
+# ------------------------------------------------------------------------------
 
-nodes:
-  - id: DC1-LEAF-101
-    label: DC1-LEAF-101
+cellIdPreamble: ""
 
-    match:
-      type: label
-      value: DC1-LEAF-101
+# ------------------------------------------------------------------------------
+# Data (Prometheus queries)
+# ------------------------------------------------------------------------------
 
-    datasource: prometheus
+data:
+  DC1-LEAF-101-up:
     query: up{hostname="DC1-LEAF-101"}
+    datasourceUid: prometheus
 
-    thresholds:
-      - value: 0
-        color: red
-      - value: 1
-        color: green
+# ------------------------------------------------------------------------------
+# Cells (map SVG ID → metric)
+# ------------------------------------------------------------------------------
 
-    valueMapping:
-      1: UP
-      0: DOWN
+cells:
 
-# Optional styling
-styles:
-  default:
-    shape: rect
-    strokeWidth: 2
-    fontSize: 12
+  elGet3u_EBpRw3bKElkN-146:
+    dataRef: DC1-LEAF-101-up
 
-options:
-  animation: true
-  showLegend: true
+    # Show value inside node (optional)
+    label:
+      mode: value
+
+    # Fill color based on up/down
+    fillColor:
+      thresholds:
+        - { color: "red", level: 0 }
+        - { color: "green", level: 1 }
+
+    # Optional: label color also changes
+    labelColor:
+      thresholds:
+        - { color: "red", level: 0 }
+        - { color: "green", level: 1 }
