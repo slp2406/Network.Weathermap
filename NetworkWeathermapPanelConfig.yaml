@@ -2,7 +2,7 @@ cellIdPreamble: "cell-"
 
 data:
   DC1-LEAF-101-up:
-    query: up{hostname="DC1-LEAF-101"}
+    query: vector(1)
     datasourceUid: e5ebe0e3-4d0e-4311-8bdf-bbba2133fcf1
 
 cells:
