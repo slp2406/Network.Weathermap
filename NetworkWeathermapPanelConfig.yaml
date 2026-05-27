@@ -1,16 +1,32 @@
+
 cellIdPreamble: ""
 
 data:
-  DC1-8500L-IE-up:
-    query: vector(1)
+  dc1:
+    query: up{hostname="DC1-8500L-IE"}
+    datasourceUid: e5ebe0e3-4d0e-4311-8bdf-bbba2133fcf1
+
+  dc2:
+    query: up{hostname="DC2-8500L-IE"}
+    datasourceUid: e5ebe0e3-4d0e-4311-8bdf-bbba2133fcf1
+
+  internet:
+    query: up{hostname="Internet"}
     datasourceUid: e5ebe0e3-4d0e-4311-8bdf-bbba2133fcf1
 
 cells:
-  drawio:
-    link:
-      url: "https://app.diagrams.net/?p=svgdata"
-  6hPBW4zQecVtldV8R2GZ-14:
-    dataRef: DC1-8500L-IE-up
+
+  cell-DC1-8500L-IE:
+    dataRef: dc1
+    label:
+      mode: value
+    fillColor:
+      thresholds:
+        - { level: 0, color: "red" }
+        - { level: 1, color: "green" }
+
+  cell-DC2-8500L-IE:
+    dataRef: dc2
     label:
       mode: value
     fillColor:
