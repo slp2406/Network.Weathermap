@@ -1,7 +1,7 @@
-cellIdPreamble: "cell-"
+cellIdPreamble: ""
 
 data:
-  DC1-LEAF-101-up:
+  DC1-8500L-IE-up:
     query: vector(1)
     datasourceUid: e5ebe0e3-4d0e-4311-8bdf-bbba2133fcf1
 
@@ -9,8 +9,8 @@ cells:
   drawio:
     link:
       url: "https://app.diagrams.net/?p=svgdata"
-  elGet3u_EBpRw3bKElkN-146:
-    dataRef: DC1-LEAF-101-up
+  6hPBW4zQecVtldV8R2GZ-13:
+    dataRef: DC1-8500L-IE-up
     label:
       mode: value
     fillColor:
