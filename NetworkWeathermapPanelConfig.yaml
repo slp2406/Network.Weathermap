@@ -6,7 +6,7 @@
 cellIdPreamble: ""
 
 # ------------------------------------------------------------------------------
-# Data (Prometheus queries)
+# Data section (Prometheus queries)
 # ------------------------------------------------------------------------------
 
 data:
@@ -15,26 +15,18 @@ data:
     datasourceUid: prometheus
 
 # ------------------------------------------------------------------------------
-# Cells (map SVG ID → metric)
+# Cells (SVG mapping)
 # ------------------------------------------------------------------------------
 
 cells:
 
-  elGet3u_EBpRw3bKElkN-146:
+  cell-elGet3u_EBpRw3bKElkN-146:
     dataRef: DC1-LEAF-101-up
 
-    # Show value inside node (optional)
+    # Display value inside the shape (optional)
     label:
       mode: value
 
     # Fill color based on up/down
     fillColor:
       thresholds:
-        - { color: "red", level: 0 }
-        - { color: "green", level: 1 }
-
-    # Optional: label color also changes
-    labelColor:
-      thresholds:
-        - { color: "red", level: 0 }
-        - { color: "green", level: 1 }
