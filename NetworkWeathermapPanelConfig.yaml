@@ -1,41 +1,18 @@
-
-# ------------------------------------------------------------------------------
-# Panel Config
-# ------------------------------------------------------------------------------
-
 cellIdPreamble: ""
-
-# ------------------------------------------------------------------------------
-# Data
-# ------------------------------------------------------------------------------
 
 data:
   DC1-LEAF-101-up:
     query: up{hostname="DC1-LEAF-101"}
-    datasourceUid: prometheus
-
-# ------------------------------------------------------------------------------
-# Cells
-# ------------------------------------------------------------------------------
+    datasourceUid: e5ebe0e3-4d0e-4311-8bdf-bbba2133fcf1
 
 cells:
-
   cell-elGet3u_EBpRw3bKElkN-146:
     dataRef: DC1-LEAF-101-up
 
     label:
       mode: value
-      mapping:
-        1: "UP"
-        0: "DOWN"
 
     fillColor:
       thresholds:
-        - { color: "red", level: 0 }
-        - { color: "green", level: 1 }
-
-    labelColor:
-      thresholds:
-        - { color: "white", level: 0 }
-        - { color: "black", level: 1 }
-``
+        - { level: 0, color: "red" }
+        - { level: 1, color: "green" }
