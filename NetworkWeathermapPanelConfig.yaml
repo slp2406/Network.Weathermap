@@ -2,33 +2,14 @@
 cellIdPreamble: ""
 
 data:
-  dc1:
-    query: up{hostname="DC1-8500L-IE"}
-    datasourceUid: e5ebe0e3-4d0e-4311-8bdf-bbba2133fcf1
-
-  dc2:
-    query: up{hostname="DC2-8500L-IE"}
-    datasourceUid: e5ebe0e3-4d0e-4311-8bdf-bbba2133fcf1
-
-  internet:
-    query: up{hostname="Internet"}
+  test:
+    query: vector(1)
     datasourceUid: e5ebe0e3-4d0e-4311-8bdf-bbba2133fcf1
 
 cells:
-
   cell-DC1-8500L-IE:
-    dataRef: dc1
-    label:
-      mode: value
-    fillColor:
-      thresholds:
-        - { level: 0, color: "red" }
-        - { level: 1, color: "green" }
+    dataRef: test
 
-  cell-DC2-8500L-IE:
-    dataRef: dc2
-    label:
-      mode: value
     fillColor:
       thresholds:
         - { level: 0, color: "red" }
