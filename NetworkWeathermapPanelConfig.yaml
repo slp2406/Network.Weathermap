@@ -1,0 +1,37 @@
+version: 1
+
+datasources:
+  - name: Prometheus
+    uid: prometheus
+
+nodes:
+  - id: DC1-LEAF-101
+    label: DC1-LEAF-101
+
+    match:
+      type: label
+      value: DC1-LEAF-101
+
+    datasource: prometheus
+    query: up{hostname="DC1-LEAF-101"}
+
+    thresholds:
+      - value: 0
+        color: red
+      - value: 1
+        color: green
+
+    valueMapping:
+      1: UP
+      0: DOWN
+
+# Optional styling
+styles:
+  default:
+    shape: rect
+    strokeWidth: 2
+    fontSize: 12
+
+options:
+  animation: true
+  showLegend: true
