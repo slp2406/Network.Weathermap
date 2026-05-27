@@ -19,12 +19,3 @@ cells:
           color: red
         - level: 1
           color: green
-
-    textColor:
-      thresholds:
-        - level: 0
-          color: white
-        - level: 1
-          color: white
-
-    defaultColor: gray
