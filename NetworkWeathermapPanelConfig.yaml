@@ -1,15 +1,17 @@
-
-cellIdPreamble: ""
+targets:
+  - refId: A
+    datasource:
+      type: prometheus
+      uid: e5ebe0e3-4d0e-4311-8bdf-bbba2133fcf1
+    expr: up{instance="DC1-8500L-IE"} == 1
 
 data:
-  test:
-    query: vector(1)
-    datasourceUid: e5ebe0e3-4d0e-4311-8bdf-bbba2133fcf1
+  device1:
+    query: A
 
 cells:
   cell-DC1-8500L-IE:
-    dataRef: test
-
+    dataRef: device1
     fillColor:
       thresholds:
         - { level: 0, color: "red" }
