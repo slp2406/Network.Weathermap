@@ -30,3 +30,11 @@ cells:
     # Fill color based on up/down
     fillColor:
       thresholds:
+        - { color: "red", level: 0 }
+        - { color: "green", level: 1 }
+
+    # Optional: change text color too
+    labelColor:
+      thresholds:
+        - { color: "red", level: 0 }
+        - { color: "green", level: 1 }
