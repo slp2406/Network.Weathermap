@@ -1,35 +1,18 @@
----
-
-#------------------------------------------------------------------------------
-# YAML Aliases to simplify maintenance
-
-anchorLinks:
-  - link: &grafana-home
-      url: "https://grafana.com/"
-      params: "time"
-
-#------------------------------------------------------------------------------
-# Panel Config
-
 cellIdPreamble: "cell-"
-cells: 
-  drawio:
-    link:
-      url: "https://app.diagrams.net/?p=svgdata"
-  docs:
-    link:
-      url: "https://github.com/andymchugh/andrewbmchugh-flow-panel/blob/main/src/README.md"
-  inbox_depth:
-    dataRef: "elGet3u_EBpRw3bKElkN-146"
+
+data:
+  DC1-LEAF-101-up:
+    query: up{hostname="DC1-LEAF-101"}
+    datasourceUid: e5ebe0e3-4d0e-4311-8bdf-bbba2133fcf1
+
+cells:
+  elGet3u_EBpRw3bKElkN-146:
+    dataRef: DC1-LEAF-101-up
+
     label:
-      separator: "cr"
-      units: "none"
-      decimalPoints: 0
-    labelColor:
-      gradientMode: "hue"
+      mode: value
+
+    fillColor:
       thresholds:
-        - {color: "green", level: 0}
-        - {color: "orange", level: 500}
-        - {color: "red", level: 1000}
-    link: *grafana-home
-  
+        - { level: 0, color: "red" }
+        - { level: 1, color: "green" }
